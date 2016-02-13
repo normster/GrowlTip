@@ -19,6 +19,7 @@ def close_connection(exception):
 
 def db_read_growls():
     cur = get_db().cursor()
+    cur.execute("CREATE TABLE if not EXISTS growls (name, datetime, growl)")
     cur.execute("SELECT * FROM growls")
     return cur.fetchall()
 
