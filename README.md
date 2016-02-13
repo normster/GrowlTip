@@ -1,18 +1,8 @@
-# Welcome to Cal Hacks 2.0!
+# GrowlTip
 
-Welcome to Cal Hacks! If you haven't figured out by now, Cal Hacks is UC Berkeley's annual hella trill hackathon, put on at the California memorial stadium. It's a great place learn, build, and meet other amazing hackers.
+Today we are building GrowlTip, a simple ChangeTip clone within Growler, made by Hackers @ Berkeley. Growler is itself a clone of Twitter, written in Flask. We will be building on top of the completed Growler app, and as such we assume you have some basic familiarity with Python and the Flask framework. If you would like a refresher, take a look at the original tutorial for building Growler, available at [https://github.com/HackBerkeley/Growler](https://github.com/HackBerkeley/Growler). 
 
-If you've never hacked before, don't worry. And if you have hacked before but want to learn how to do web development with python, you're in the perfect place.
-
-This is a guide that will help you through your first hack. We'll be building **Growler**, a Twitter-like communication app for dysfunctional teams, in Flask and Python.
-
-# Step 0: How to get help
-
-If you find yourself getting stuck, don't just stare at the code for an hour. Instead, do the following:
-
-* **Use Google.** Results from [stackoverflow.com](http://stackoverflow.com) are an amazing resource. You get to utilize the knowledge of the global computer science developer community. However, don't just copy-paste answers from the web. Make sure you understand exactly what's going on before you copy-paste anything.
-* **Talk to your neighbors.** Working in groups is extremely productive as each of you can fill the gaps of knowledge the others have. Also, it's a good opportunity to **make friends** and find future potential startup cofounders! 
-* **Ask people for help.** We have hundreds of mentors, from the community and companies alike, who have volunteered to assist you today. You can ask any of us any question you have. We're nice people. We don't bite.
+If you get stuck or don't understand something at any point in this workshop, please do ask us. Chances are someone else is also confused or stuck.
 
 # Step 1: Make sure you have Python 3.4
 
