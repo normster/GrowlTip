@@ -20,15 +20,15 @@ def close_connection(exception):
 
 def db_read_growls():
     cur = get_db().cursor()
-    cur.execute("CREATE TABLE if not EXISTS growls (name TEXT, datetime TEXT, growl TEXT, wallet TEXT)")
+    cur.execute("CREATE TABLE if not EXISTS growls (name TEXT, datetime TEXT, growl TEXT)")
     cur.execute("SELECT * FROM growls")
     return cur.fetchall()
 
-def db_add_growl(name, growl, wallet):
+def db_add_growl(name, growl):
     cur = get_db().cursor()
     t = str(time.time())
-    growl_info = (name, t, growl, wallet)
-    cur.execute("INSERT INTO growls VALUES (?, ?, ?, ?)", growl_info)
+    growl_info = (name, t, growl)
+    cur.execute("INSERT INTO growls VALUES (?, ?, ?)", growl_info)
     get_db().commit()
 
 @app.route("/")
@@ -40,23 +40,8 @@ def hello():
 @app.route("/", methods=["POST"])
 def testing():
     print(request.form)
-    db_add_growl(request.form['name'], request.form['growl'], request.form['wallet'])
+    db_add_growl(request.form['name'], request.form['growl'])
     return hello()
-
-@app.route("/tip/<dest_wallet>", methods=["POST"])
-def send_tip(dest_wallet):
-    print(request.form)
-    identifier = request.form['identifier']
-    password = request.form['password']
-    amount = request.form['amount']
-    wal = wallet.Wallet("{0}".format(identifier), "{0}".format(password))
-    wal.send(dest_wallet, amount)
-    print("\n\nSending " + str(amount) + " Satoshis to " + str(dest_wallet) + "\n\n")
-    return hello()
-
-@app.route("/tip/<dest_wallet>")
-def tip_login(dest_wallet):
-    return render_template('tip.html', dest_wallet  = dest_wallet)
 
 if __name__ == "__main__":
     app.debug = True

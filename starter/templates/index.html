@@ -11,9 +11,6 @@
       Growl:
       <input name="growl" type="text" maxlength="76" />
       <br></br>
-      Your wallet ID:
-      <input name="wallet" type="text" />
-      <br></br>
       <input type="submit" />
     </form>
     <div id="feed">
@@ -22,9 +19,6 @@
         <div class="growl">
             <b>{{ growl[0] }}</b>
             <p>{{ growl[2] }}</p>
-            <form action='/tip/{{ growl[3] }}'  method='GET'>
-              <input type="submit" value="Tip Me"/>
-            </form>
         </div>
         {% endfor %}
     </div>
