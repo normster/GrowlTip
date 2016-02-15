@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Growler - better than Twitter - also better than ChangeTip</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">  </head>
+  <body>
+    <h1>GrowlTip</h1>
+    <div id="feed">
+      <h2>Enter information below</h2>
+      <form action="/api/tip" method="POST">
+        Blockchain wallet ID:
+        <input name="identifier" type="text">
+        Password:
+        <input name="password" type="text">
+      </form>
+    </div>
+  </body>
+</html>

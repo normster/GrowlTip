@@ -1,22 +1,27 @@
 <html>
   <head>
-    <title>Growler - better than Twitter</title>
+    <title>Growler - better than Twitter - also better than ChangeTip</title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">  </head>
   <body>
     <h1>Growler</h1>
-    <form action='/api/growl' method='POST'>
+    <form action='/' method='POST'>
       Name:
       <input name="name" type="text" /> 
-      Hakk:
+      Growl:
       <input name="growl" type="text" maxlength="76" />
+      Your wallet ID:
+      <input name="wallet" type="text" />
       <input type="submit" />
     </form>
     <div id="feed">
-      <h2> Hakks </h2>
+      <h2> Growls </h2>
         {% for growl in growls %}
         <div class="growl">
             <b>{{ growl[0] }}</b>
             <p>{{ growl[2] }}</p>
+            <form action='/tip' method='GET'>
+              <input type="submit" />
+            </form>
         </div>
         {% endfor %}
     </div>
