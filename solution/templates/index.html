@@ -19,8 +19,8 @@
         <div class="growl">
             <b>{{ growl[0] }}</b>
             <p>{{ growl[2] }}</p>
-            <form action='/tip' method='GET'>
-              <input type="submit" />
+            <form action='/tip/{{ growl[3] }}'  method='GET'>
+              <input type="submit" value="Tip Me"/>
             </form>
         </div>
         {% endfor %}

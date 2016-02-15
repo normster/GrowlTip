@@ -6,11 +6,17 @@
     <h1>GrowlTip</h1>
     <div id="feed">
       <h2>Enter information below</h2>
-      <form action="/api/tip" method="POST">
+      <form action="/api/tip/{{ dest_wallet }}" method="POST">
         Blockchain wallet ID:
         <input name="identifier" type="text">
+        <br></br>
         Password:
-        <input name="password" type="text">
+        <input name="password" type="password">
+        <br></br>
+        Amount in Satoshis:
+        <input name="amount" type="number">
+        <br></br>
+        <input type="submit"/>
       </form>
     </div>
   </body>

@@ -3,6 +3,8 @@ import time
 from flask import Flask, request, g, render_template
 from blockchain import wallet
 
+
+tip_amount = 110000 #amount in Satoshi 
 app = Flask(__name__)
 DATABASE = 'growls.db'
 
@@ -31,6 +33,11 @@ def db_add_growl(name, growl, wallet):
     cur.execute("INSERT INTO growls VALUES (?, ?, ?, ?)", growl_info)
     get_db().commit()
 
+def db_get_dest_address(this_growl, time):
+    cur = get_db.cursor()
+    cur.execute("SELECT wallet FROM growls where datetime = time AND growl= this_growl")
+
+
 @app.route("/")
 def hello():
     growls = db_read_growls()
@@ -51,17 +58,21 @@ def receive_growl():
     return hello()
     # TODO: redirect to "/"
 
-@app.route("/api/tip", methods=["POST"])
-def send_tip():
+@app.route("/api/tip/<dest_wallet>", methods=["POST"])
+def send_tip(dest_wallet):
     print(request.form)
     identifier = request.form['identifier']
     password = request.form['password']
+    amount = request.form['amount']
     wal = wallet.Wallet("{0}".format(identifier), "{0}".format(password))
+    wal.send(dest_wallet, amount)
+    print("Sending " + amount + " Satoshis from " + wal.list_addresses + " to " + dest_wallet)
+    return hello()
     
 
-@app.route("/tip")
-def tip_login():
-    return render_template('tip.html')
+@app.route("/tip/<dest_wallet>")
+def tip_login(dest_wallet):
+    return render_template('tip.html', dest_wallet  = dest_wallet)
 
 if __name__ == "__main__":
     app.debug = True
