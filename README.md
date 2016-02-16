@@ -81,7 +81,8 @@ We will start by creating a redirect to a new tip page in `server.py`. Like `hel
 ```python 
 @app.route("/tip/<dest_wallet>")
 def tip_login(dest_wallet):
-    return render_template('tip.html', dest_wallet  = dest_wallet)```
+    return render_template('tip.html', dest_wallet  = dest_wallet)
+```
 
 Here we are doing a little tricky Flask magic by using variable route. The `<dest_wallet>` allows us to pass the value of the user's wallet address through to the actual tip page. 
  
