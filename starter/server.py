@@ -31,14 +31,14 @@ def db_add_growl(name, growl):
     cur.execute("INSERT INTO growls VALUES (?, ?, ?)", growl_info)
     get_db().commit()
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def hello():
     growls = db_read_growls()
     print(growls)
     return render_template('index.html', growls=growls)
 
 @app.route("/", methods=["POST"])
-def testing():
+def submit():
     print(request.form)
     db_add_growl(request.form['name'], request.form['growl'])
     return hello()

@@ -100,7 +100,7 @@ Next, we will add a button giving users the ability to tip each growl. We will e
         {% endfor %}
 ```
         
-The `action='/tip/{{ growl[3] }}` access the database and retrieves the corresponding wallet address and redirects to the `tip.html` file we will be creating next. 
+The `action='/tip/{{ growl[3] }}` accesses the database and retrieves the corresponding wallet address and redirects to the `tip.html` file we will be creating next. 
 
 # Step 6: Create a Tip Login Page
 We will now create a tip page where a user can login to their blockchain.info wallet and send a variable amount of btc to the user who wrote a growl. 
@@ -152,9 +152,8 @@ def send_tip(dest_wallet):
 
 Congratulations, you have officially made a Bitcoin app! Beware that you will waste a lot of money by repeatedly using the app since transaction fees eat into your bitcoin balance. However, you can take my word that this does in fact work. 
 
-## Future Modifications
-I honestly don't know? Make ChangeTip all over again and steal their users or something
-
-
-
-
+## Extra Credit 
+- Add support for users and loggin in
+- Add support for multiple Blockchain wallets per tipper
+- Catch exceptions from invalid Blockchain logins more gracefully
+- Deploy online

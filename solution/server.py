@@ -31,14 +31,14 @@ def db_add_growl(name, growl, wallet):
     cur.execute("INSERT INTO growls VALUES (?, ?, ?, ?)", growl_info)
     get_db().commit()
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def hello():
     growls = db_read_growls()
     print(growls)
     return render_template('index.html', growls=growls)
 
 @app.route("/", methods=["POST"])
-def testing():
+def submit():
     print(request.form)
     db_add_growl(request.form['name'], request.form['growl'], request.form['wallet'])
     return hello()
@@ -54,7 +54,7 @@ def send_tip(dest_wallet):
     print("\n\nSending " + str(amount) + " Satoshis to " + str(dest_wallet) + "\n\n")
     return hello()
 
-@app.route("/tip/<dest_wallet>")
+@app.route("/tip/<dest_wallet>", methods=["GET"])
 def tip_login(dest_wallet):
     return render_template('tip.html', dest_wallet  = dest_wallet)
 
