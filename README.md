@@ -99,7 +99,7 @@ Next, we will add a button giving users the ability to tip each growl. We will e
         {% endfor %}
 ```
         
-The `action='/tip/{{ growl[3] }` access the database and retrieves the corresponding wallet address and redirects to the `tip.html` file we will be creating next. 
+The `action='/tip/{{ growl[3] }}` access the database and retrieves the corresponding wallet address and redirects to the `tip.html` file we will be creating next. 
 
 # Step 6: Create a Tip Login Page
 We will now create a tip page where a user can login to their blockchain.info wallet and send a variable amount of btc to the user who wrote a growl. 
