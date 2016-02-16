@@ -150,7 +150,7 @@ def send_tip(dest_wallet):
 ```
 
 
-Congratulations, you have officially made a Bitcoin app! Beware that you will waste a lot of money by repeatedly using the app since transaction fees eat into bitcoin balance. However, you can take my word that this does in fact work. 
+Congratulations, you have officially made a Bitcoin app! Beware that you will waste a lot of money by repeatedly using the app since transaction fees eat into your bitcoin balance. However, you can take my word that this does in fact work. 
 
 ## Future Modifications
 I honestly don't know? Make ChangeTip all over again and steal their users or something
