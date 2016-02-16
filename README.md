@@ -145,7 +145,8 @@ def send_tip(dest_wallet):
     wal = wallet.Wallet("{0}".format(identifier), "{0}".format(password))
     wal.send(dest_wallet, amount)
     print("\n\nSending " + str(amount) + " Satoshis to " + str(dest_wallet) + "\n\n")
-    return hello()```
+    return hello()
+```
 
 
 Congratulations, you have officially made a Bitcoin app! Beware that you will waste a lot of money by repeatedly using the app since transaction fees eat into bitcoin balance. However, you can take my word that this does in fact work. 
