@@ -129,7 +129,7 @@ Create a new file called `tip.html` in the `templates` folder. We can copy over 
 
 The Blockchain wallet identifier is not the address of the wallet itself, but rather a unique identifier used to login to a blockchain.info wallet. This allows us to use the Blockchain.info API to send. 
 
-Satoshi is one of the smallest representation of bitcoins that is publicly used. They represent an easier way to deal with bitcoin when talking about prices. The transaction fee for using blockchain.info is 10000 satoshis, thus the value in the satoshis must be greater than 10000 for it to be confirmed on the bitcoin network. 
+Satoshi is one of the smallest representation of bitcoins that is publicly used. They represent an easier way to deal with bitcoin when talking about prices. The transaction fee for using blockchain.info is 10000 satoshis or about $0.04 at the writing of this README (February 15, 2015), thus the value in the satoshis must be greater than 10000 for it to be confirmed on the bitcoin network. 
 
 
 # Step 7: Create the API call
